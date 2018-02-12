@@ -3,6 +3,13 @@
         <h1>
             Sign Up
         </h1>
+          {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages }}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
         <form action="/user/signup" method="POST">
             <div class="form-group">
                 <label for="email">E-mail</label>
